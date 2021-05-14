@@ -258,7 +258,7 @@ async function starts() {
 						reply('1 para ativar, 0 para desativar')
 					}
 					} catch {
-						reply(msgerr)
+						reply('erro ao fazer esse comando')
 					}
                 break
 				case 'antilink':
