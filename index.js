@@ -73,16 +73,6 @@ async function starts() {
 					}
 				}
 			}
-			if (anu.action == 'add') {
-				num = anu.participants[0]
-				try {
-					ppimg = await client.getProfilePicture(`${anu.participants[0].split('@')[0]}@c.us`)
-				} catch {
-					ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
-				}
-				teks = welcometxt(num.split('@')[0], mdata.subject)
-				client.sendMessage(mdata.id, teks, MessageType.text, {contextInfo: {"mentionedJid": [num]}})
-			}
 		} catch (e) {
 			console.log('Error : %s', color(e, 'red'))
 		}
@@ -332,14 +322,8 @@ async function starts() {
 					}
 					break
 				default:
-					if (isGroup && budy != undefined) {
-						console.log(budy)
-						muehe = await simih(budy)
-						console.log(muehe)
-						reply(muehe)
-					} else {
-						console.log(color('[ERROR]','red'), 'Unregistered Command from', color(sender.split('@')[0]))
-					}
+					console.log(color('[ERROR]','red'), 'Unregistered Command from', color(sender.split('@')[0]))
+
 			}
 			
 		} catch (e) {
