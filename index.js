@@ -232,9 +232,9 @@ async function starts() {
 					if (!isGroupAdmins) return reply(mess.only.admin)
 					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
 					if (mek.message.extendedTextMessage != undefined || mek.message.extendedTextMessage != null) {
-						num = mek.message.extendedTextMessage.contextInfo.participant
-						client.sendMessage(from, bye(num.split('@')[0]), extendedText, {quoted: mek, contextInfo: { mentionedJid: [num]}})
-						client.groupRemove(from, [num])
+						num1 = mek.message.extendedTextMessage.contextInfo.participant
+						client.sendMessage(from, bye(num1.split('@')[0]), extendedText, {quoted: mek, contextInfo: { mentionedJid: [num1]}})
+						client.groupRemove(from, [num1])
 					}
 					else { 
 						reply('Responda a mensagem da pessoa')
