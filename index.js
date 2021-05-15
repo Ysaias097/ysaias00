@@ -131,6 +131,7 @@ async function starts() {
 			const groupMembers = isGroup ? groupMetadata.participants : ''
 			const groupAdmins = isGroup ? getGroupAdmins(groupMembers) : ''
 			const isBotGroupAdmins = groupAdmins.includes(botNumber) || false
+			const isAntiFake = isGroup ? antifake.includes(from) : false
 			const isGroupAdmins = groupAdmins.includes(sender) || false
 			const isAntiLink = isGroup ? antilink.includes(from) : false
 			const isAntiLinkHard = isGroup ? antilinkhard.includes(from) : false
@@ -233,7 +234,7 @@ async function starts() {
 					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
 					if (mek.message.extendedTextMessage != undefined || mek.message.extendedTextMessage != null) {
 						num1 = mek.message.extendedTextMessage.contextInfo.participant
-						client.sendMessage(from, bye(num1.split('@')[0]), extendedText, {quoted: mek, contextInfo: { mentionedJid: [num1]}})
+						client.sendMessage(from, `Até mais @${num1.split('@')[0]} vai na sombra pq bosta no sol seca kkkkkkkkk`, extendedText, {quoted: mek, contextInfo: { mentionedJid: [num1]}})
 						client.groupRemove(from, [num1])
 					}
 					else { 
